@@ -1,0 +1,123 @@
+body{
+    font-family:'Courier New', Courier, monospace;
+    margin:0;
+    padding: 0;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(61, 29, 17);
+    padding: 30px 20px;
+}
+
+.nav-header img{
+    height: auto;
+    cursor: pointer;
+    max-width: auto;
+}
+
+.nav-header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-header ul li{
+    margin-left:20px;
+}
+
+.nav-header ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.nav-header ul li a:hover{
+    color:rgb(255, 255, 255);
+}
+
+header{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(8, 7, 7);
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+.course-container {
+    position: relative; /* Change from absolute to relative */
+    background: #6000003e;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    width: 250px; /* Adjusted width for sidebar */
+    text-align: center;
+    margin-right: 20px; /* Space between sidebar and book display */
+}
+
+.course-container h2 {
+    margin-top: 0;
+}
+
+.course-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-container li {
+    margin-bottom: 10px; /* Space between courses */
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+#search-bar {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 5px 10px;
+}
+
+.book-container {
+    flex: 1; /* Takes the remaining space */
+    background: #ffffff; /* Background color for the book container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    padding: 20px; /* Inner padding */
+    margin-left: 20px; /* Space from the sidebar */
+}
+
+.book-display h2 {
+    margin-top: 0;
+}
+
+#book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between book items */
+}
+
+/* Style for individual book items */
+.book-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 150px; /* Adjust size as needed */
+    text-align: center;
+}

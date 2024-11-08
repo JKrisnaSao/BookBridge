@@ -1,0 +1,99 @@
+body{
+    font-family:'Courier New', Courier, monospace;
+    margin:0;
+    padding: 0;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(61, 29, 17);
+    padding: 30px 20px;
+}
+
+.nav-header img{
+    height: auto;
+    cursor: pointer;
+    max-width: auto;
+}
+
+.nav-header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-header ul li{
+    margin-left:20px;
+}
+
+.nav-header ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.nav-header ul li a:hover{
+    color:rgb(255, 255, 255);
+}
+
+header{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(8, 7, 7);
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+.profile-container {
+    background: white; /* White background for profile container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    padding: 20px;
+    width: 400px; /* Width of the profile box */
+    text-align: center; /* Centered text */
+}
+
+.profile-header {
+    margin-bottom: 20px; /* Space below profile header */
+}
+
+.profile-pic {
+    width: 120px; /* Size of the profile picture */
+    height: 120px; /* Size of the profile picture */
+    border-radius: 50%; /* Circular profile picture */
+    border: 3px solid #6000003e; /* Border around profile picture */
+}
+
+.bio {
+    font-style: italic; /* Italic style for bio */
+    margin: 10px 0; /* Space above and below bio */
+}
+
+.my-books, .courses-enrolled, .contact-info {
+    text-align: left; /* Left-align text for sections */
+    margin: 15px 0; /* Space above and below sections */
+}
+
+.my-books h3, .courses-enrolled h3, .contact-info h3 {
+    margin-bottom: 10px; /* Space below section titles */
+}
+
+.my-books ul, .courses-enrolled ul {
+    list-style-type: none; /* Remove bullets from lists */
+    padding: 0; /* Remove padding */
+}
+
+.my-books li, .courses-enrolled li {
+    padding: 5px 0; /* Space between list items */
+}
