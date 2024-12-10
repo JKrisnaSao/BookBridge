@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reply Details</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Reply Details</h1>
+<p><strong>Content:</strong> <span th:text="${reply.content}"></span></p>
+<p><strong>Provider:</strong> <span th:text="${reply.provider.businessName}"></span></p>
+<p><strong>Review:</strong> <span th:text="${reply.review.content}"></span></p>
+<a href="/replies/all">Back to Replies</a>
+</body>
+</html>

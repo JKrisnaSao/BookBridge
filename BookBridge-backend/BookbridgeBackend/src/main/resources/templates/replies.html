@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Replies</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Replies</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Content</th>
+        <th>Provider</th>
+        <th>Review</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="reply : ${replies}">
+        <td th:text="${reply.content}"></td>
+        <td th:text="${reply.provider.businessName}"></td>
+        <td th:text="${reply.review.content}"></td>
+        <td>
+            <a th:href="@{/replies/delete/{id}(id=${reply.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

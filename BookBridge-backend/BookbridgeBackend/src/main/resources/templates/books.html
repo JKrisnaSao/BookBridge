@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Books List</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Books</h1>
+
+<div class="actions">
+  <a href="/books/new" class="btn create-btn">Add New Book</a>
+</div>
+
+<table class="books-table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Genre</th>
+    <th>Seller Name</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="book : ${books}">
+    <td th:text="${book.title}"></td>
+    <td th:text="${book.author}"></td>
+    <td th:text="${book.genre}"></td>
+    <td th:text="${book.sellerName}"></td>
+    <td class="actions">
+      <a th:href="@{/books/{id}(id=${book.bookId})}" class="btn view-btn">View</a>
+      <a th:href="@{/books/update/{id}(id=${book.bookId})}" class="btn edit-btn">Edit</a>
+      <a th:href="@{/books/delete/{id}(id=${book.bookId})}" class="btn delete-btn">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="pagination">
+  <a href="/books/page/1" class="btn page-btn">1</a>
+  <a href="/books/page/2" class="btn page-btn">2</a>
+  <!-- Add more page links as needed -->
+</div>
+
+</body>
+</html>
+

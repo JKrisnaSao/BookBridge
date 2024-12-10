@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Providers</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Providers</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Business Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="provider : ${providers}">
+        <td th:text="${provider.name}"></td>
+        <td th:text="${provider.email}"></td>
+        <td th:text="${provider.businessName}"></td>
+        <td th:text="${provider.accountStatus}"></td>
+        <td>
+            <a th:href="@{/providers/{id}/books(id=${provider.id})}">Books</a>
+            <a th:href="@{/providers/update/{id}(id=${provider.id})}">Edit</a>
+            <a th:href="@{/providers/delete/{id}(id=${provider.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/providers/new">Add New Provider</a>
+</body>
+</html>

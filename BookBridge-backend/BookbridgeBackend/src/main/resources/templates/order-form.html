@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${order.orderId == null ? 'Create' : 'Edit'} + ' Order'"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<h1 th:text="${order.orderId == null ? 'Create New Order' : 'Edit Order'}"></h1>
+
+<form th:action="@{${order.orderId == null ? '/orders/new' : '/orders/update/' + order.orderId}}"
+      th:object="${order}" method="post">
+
+    <!-- Customer selection -->
+    <label for="customerId">Customer:</label>
+    <select id="customerId" th:field="*{customer.id}" required>
+        <option value="" disabled selected>Select a Customer</option>
+        <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.name}"></option>
+    </select>
+
+    <!-- Book selection -->
+    <label for="bookId">Book:</label>
+    <select id="bookId" th:field="*{book.bookId}" required>
+        <option value="" disabled selected>Select a Book</option>
+        <option th:each="book : ${books}" th:value="${book.bookId}" th:text="${book.title}"></option>
+    </select>
+
+    <!-- Order date -->
+    <label for="orderDate">Order Date:</label>
+    <input type="date" id="orderDate" th:field="*{orderDate}" required>
+
+    <div class="actions">
+        <button type="submit" class="btn submit-btn">Save</button>
+        <a href="/orders/all" class="btn cancel-btn">Cancel</a>
+    </div>
+</form>
+
+</body>
+</html>
+
