@@ -2,14 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>User Details</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
-<h1>User Details</h1>
+<div class="nav-header">
+    <a href="users/home">
+        <img src="" alt="BookBridge">
+    </a>
+    <ul>
+        <li><a href="/users/home">Home</a></li>
+        <li><a href="/orders/all">My Books</a></li>
+        <li><a href="Logout.html">Logout</a></li>
+    </ul>
+</div>
+<div class="main-content">
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>User Details</h1>
+        </div>
 <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
 <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
 <p><strong>Role:</strong> <span th:text="${user.role}"></span></p>
 <p><strong>Account Status:</strong> <span th:text="${user.accountStatus}"></span></p>
-<a href="/users">Back to Users</a>
+    </div>
+
+</div>
 </body>
 </html>
