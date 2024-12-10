@@ -33,7 +33,7 @@ public class UserController {
     @PostMapping("/new")
     public String createUser(@ModelAttribute User user) {
         userService.createUser(user);
-        return "redirect:/users/all";
+        return "redirect:/users/home";
     }
 
     @GetMapping("/update/{id}")
@@ -53,5 +53,24 @@ public class UserController {
         userService.getUserById(id); // Ensure user exists, throw if not.
         userService.updateAccountStatus(id, "Deleted"); // Change status instead of permanent deletion.
         return "redirect:/users/all";
+    }
+
+    @GetMapping({"/Welcome"})
+    public String userWelcome(Model model){
+        model.addAttribute("WelcomePage","Welcome");
+        return "Welcome";
+    }
+
+
+    @GetMapping("/login")
+    public String userLogin(Model model) {
+        model.addAttribute("users", "users");
+        return "Login";
+    }
+
+    @GetMapping({"/home"})
+    public String userGuestHome(Model model){
+        model.addAttribute("UserHomepage", "home");
+        return "user-home";
     }
 }

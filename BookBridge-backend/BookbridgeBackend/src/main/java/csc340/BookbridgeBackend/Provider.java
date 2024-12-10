@@ -14,11 +14,11 @@ public class Provider extends User {
     private List<Book> books;
 
     public Provider() {
-        super("", "", "", "Provider"); // Set default role as Provider
+        super("", "", "","Provider"); // Set default role as Provider
     }
 
     public Provider(String name, String email, String accountStatus, String businessName, List<Book> books) {
-        super(name, email, accountStatus, "Provider"); // Set role as Provider
+        super(name, email, accountStatus,"Provider"); // Set role as Provider
         this.businessName = businessName;
         this.books = books;
     }
