@@ -2,9 +2,9 @@
 >BookBridge
 
 ## Team Members
->Jonathan Sao  
->Ganiyu Ibrahim\
->Mogoi Matongo
+>Jonathan Sao - Buyer
+>Ganiyu Ibrahim - Seller
+>Mogoi Matongo - SysAdmin
 
 
 
