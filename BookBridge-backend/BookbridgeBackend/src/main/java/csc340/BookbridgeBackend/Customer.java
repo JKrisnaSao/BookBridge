@@ -17,7 +17,7 @@ public class Customer extends User {
 
 
     public Customer() {
-        super("", "", "","Customer");
+        super("", "", "", "Customer");
     }
 
     // Constructor w fields

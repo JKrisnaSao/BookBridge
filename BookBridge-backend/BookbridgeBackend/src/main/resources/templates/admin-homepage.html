@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body>
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+<nav>
+    <ul>
+        <li><a th:href="@{/books/all}">Manage Books</a></li>
+        <li><a th:href="@{/providers/all}">Manage Providers</a></li>
+        <li><a th:href="@{/reviews/all}">Manage Reviews</a></li>
+        <li><a th:href="@{/users/all}">Manage Users</a></li>
+        <li><a th:href="@{/orders/all}">Manage Orders</a></li>
+    </ul>
+</nav>
+<footer>
+    <p>&copy; 2024 Admin Dashboard. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

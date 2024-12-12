@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Providers</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Providers List</title>
+    <link rel="stylesheet" th:href="@{/css/providers.css}">
 </head>
 <body>
-<h1>Providers</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Business Name</th>
-        <th>Status</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="provider : ${providers}">
-        <td th:text="${provider.name}"></td>
-        <td th:text="${provider.email}"></td>
-        <td th:text="${provider.businessName}"></td>
-        <td th:text="${provider.accountStatus}"></td>
-        <td>
-            <a th:href="@{/providers/{id}/books(id=${provider.id})}">Books</a>
-            <a th:href="@{/providers/update/{id}(id=${provider.id})}">Edit</a>
-            <a th:href="@{/providers/delete/{id}(id=${provider.id})}">Delete</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<a href="/providers/new">Add New Provider</a>
+
+<header>
+    <h1>Providers</h1>
+</header>
+
+<div class="actions">
+    <a href="/providers/new" class="btn create-btn">Add New Provider</a>
+</div>
+
+<section>
+    <table class="providers-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Business Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="provider : ${providers}">
+            <td th:text="${provider.name}"></td>
+            <td th:text="${provider.email}"></td>
+            <td th:text="${provider.businessName}"></td>
+            <td th:text="${provider.accountStatus}"></td>
+            <td class="actions">
+                <a th:href="@{/providers/{id}/books(id=${provider.id})}" class="btn view-btn">Books</a>
+                <a th:href="@{/providers/update/{id}(id=${provider.id})}" class="btn edit-btn">Edit</a>
+                <a th:href="@{/providers/delete/{id}(id=${provider.id})}" class="btn delete-btn">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<nav class="pagination">
+    <a href="/providers/page/1" class="btn page-btn">1</a>
+    <a href="/providers/page/2" class="btn page-btn">2</a>
+    <!-- Add more page links as needed -->
+</nav>
+
 </body>
 </html>
+

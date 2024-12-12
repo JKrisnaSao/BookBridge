@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${review.id == null ? 'Create' : 'Edit'} + ' Review'"></title>
+    <title th:text="${review.id == null ? 'Create Review' : 'Edit Review'}"></title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 
-<h1 th:text="${review.id == null ? 'Create New Review' : 'Edit Review'}"></h1>
+<h1 th:text="${review != null and review.id == null ? 'Create Review' : 'Edit Review'}"></h1>
 
 <form th:action="@{${review.id == null ? '/reviews/new' : '/reviews/update/' + review.id}}"
       th:object="${review}" method="post">
@@ -28,15 +28,16 @@
 
     <!-- Review Content -->
     <label for="content">Review Content:</label>
-    <textarea id="content" th:field="*{content}" rows="4" required></textarea>
+    <textarea id="content" th:field="*{content}" rows="4" placeholder="Write your review here..." required></textarea>
 
     <!-- Rating -->
-    <label for="rating">Rating:</label>
-    <input type="number" id="rating" th:field="*{rating}" min="1" max="5" required />
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" id="rating" th:field="*{rating}" min="1" max="5" placeholder="Enter a rating" required />
 
     <div class="actions">
-        <button type="submit" class="btn submit-btn">Save</button>
-        <a href="/reviews/all" class="btn cancel-btn">Cancel</a>
+        <button type="submit" class="btn submit-btn"
+                th:text="${review.id == null ? 'Submit Review' : 'Update Review'}"></button>
+        <a th:href="@{/reviews/all}" class="btn cancel-btn">Cancel</a>
     </div>
 </form>
 

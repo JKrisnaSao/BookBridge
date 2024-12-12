@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Users</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Users List</title>
+    <link rel="stylesheet" th:href="@{/css/users.css}">
 </head>
 <body>
 <h1>Users</h1>
-<table>
+
+<div class="actions">
+    <a href="/users/new" class="btn create-btn">Add New User</a>
+</div>
+
+<table class="users-table">
     <thead>
     <tr>
         <th>Name</th>
@@ -22,13 +28,19 @@
         <td th:text="${user.email}"></td>
         <td th:text="${user.role}"></td>
         <td th:text="${user.accountStatus}"></td>
-        <td>
-            <a th:href="@{/users/update/{id}(id=${user.id})}">Edit</a>
-            <a th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a>
+        <td class="actions">
+            <a th:href="@{/users/update/{id}(id=${user.id})}" class="btn edit-btn">Edit</a>
+            <a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn delete-btn">Delete</a>
         </td>
     </tr>
     </tbody>
 </table>
-<a href="/users/new">Add New User</a>
+
+<div class="pagination">
+    <a href="/users/page/1" class="btn page-btn">1</a>
+    <a href="/users/page/2" class="btn page-btn">2</a>
+    <!-- Add more page links as needed -->
+</div>
+
 </body>
 </html>

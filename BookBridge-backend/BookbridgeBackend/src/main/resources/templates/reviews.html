@@ -6,42 +6,47 @@
     <link rel="stylesheet" th:href="@{/css/reviews.css}">
 </head>
 <body>
-<h1>Reviews</h1>
+<header>
+    <h1>Reviews</h1>
+</header>
 
 <div class="actions">
+    <!-- Updated button to connect with review-form.html -->
     <a href="/reviews/new" class="btn create-btn">Create New Review</a>
 </div>
 
-<table class="reviews-table">
-    <thead>
-    <tr>
-        <th>Customer</th>
-        <th>Book Title</th>
-        <th>Rating</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="review : ${reviews}">
-        <!-- Displaying customer name (accessing the 'name' property from Customer class) -->
-        <td th:text="${review.customer.name}"></td>
-        <!-- Displaying book title (accessing the 'title' property from Book class) -->
-        <td th:text="${review.book.title}"></td>
-        <!-- Displaying the rating -->
-        <td th:text="${review.rating}"></td>
-        <td class="actions">
-            <a th:href="@{/reviews/{id}(id=${review.id})}" class="btn view-btn">View</a>
-            <a th:href="@{/reviews/delete/{id}(id=${review.id})}" class="btn delete-btn">Delete</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<section>
+    <table class="reviews-table">
+        <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Book Title</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="review : ${reviews}">
+            <!-- Displaying customer name -->
+            <td th:text="${review.customer.name}"></td>
+            <!-- Displaying book title -->
+            <td th:text="${review.book.title}"></td>
+            <!-- Displaying the rating -->
+            <td th:text="${review.rating}"></td>
+            <td class="actions">
+                <a th:href="@{/reviews/{id}(id=${review.id})}" class="btn view-btn">View</a>
+                <a th:href="@{/reviews/delete/{id}(id=${review.id})}" class="btn delete-btn">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
 
-<div class="pagination">
+<nav class="pagination">
     <a href="/reviews/page/1" class="btn page-btn">1</a>
     <a href="/reviews/page/2" class="btn page-btn">2</a>
     <!-- Add more page links as needed -->
-</div>
+</nav>
 
 </body>
 </html>
